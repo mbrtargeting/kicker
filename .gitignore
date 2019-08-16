@@ -5,4 +5,3 @@ kicker.properties
 out/
 container-definition.yml
 appspec.yaml
-/docker-compose-production.yml
