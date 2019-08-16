@@ -157,10 +157,12 @@ public class Bot implements Watcher {
     public void onMessage(final String messageString, final Session session) throws IOException {
         logger.info(messageString);
 
-        if (messageString.contains("\"type\":\"channel_joined\"")) {
+        if (messageString.contains("\"type\":\"channel_joined\"") ||
+            messageString.contains("\"type\":\"group_joined\"")) {
 
             final var channelJoined =
                     jsonConverter.fromString(messageString, ChannelJoined.class);
+
             final var id = controller
                     .joinChannel(channelJoined.channel.id, channelJoined.channel.name);
             sendChannelJoinedMessage(channelJoined.channel.id, id);
@@ -287,6 +289,9 @@ public class Bot implements Watcher {
                         break;
                     case "help":
                         sendHelpMessage(slackChannelId, sender);
+                        break;
+                    case "motivate":
+                        controller.motivate(slackChannelId);
                         break;
                     default:
                         sendMessage(String.format("I'm sorry <@%s>, I didn't understand that. "
