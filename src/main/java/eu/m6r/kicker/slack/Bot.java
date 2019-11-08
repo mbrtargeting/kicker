@@ -290,6 +290,14 @@ public class Bot implements Watcher {
                     case "help":
                         sendHelpMessage(slackChannelId, sender);
                         break;
+                    case "motivate":
+                        if(command.toLowerCase().contains("russian")) {
+                            controller.motivate(slackChannelId, "ru");
+                        }
+                        else {
+                            controller.motivate(slackChannelId);
+                        }
+                        break;
                     default:
                         sendMessage(String.format("I'm sorry <@%s>, I didn't understand that. "
                                                   + "If you need help just ask for it.", sender),
@@ -363,6 +371,13 @@ public class Bot implements Watcher {
         cancelCommand.fields = cancelFields;
 
         message.attachments.add(cancelCommand);
+
+        final var motivateCommand = new Message.Attachment("motivate", "_Get a motivational quote._");
+        final List<Message.Attachment.Field> motivateFields = new ArrayList<>();
+        motivateFields.add(new Message.Attachment.Field(String.format("<@%s> motivate", botUserId)));
+        motivateCommand.fields = motivateFields;
+
+        message.attachments.add(motivateCommand);
         messageWriter.postEphemeral(message);
     }
 
