@@ -84,7 +84,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper
     implementation group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.4.11'
     // https://mvnrepository.com/artifact/com.google.zxing/core
-    implementation group: 'com.google.zxing', name: 'core', version: '3.3.3'
+    implementation group: 'com.google.zxing', name: 'core', version: '3.4.0'
     implementation 'com.sun.xml.bind:jaxb-impl:2.3.1'
     // https://mvnrepository.com/artifact/javax.json/javax.json-api
     implementation group: 'org.glassfish', name: 'javax.json', version: '1.1.4'
