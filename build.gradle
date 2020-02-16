@@ -66,7 +66,7 @@ dependencies {
     implementation group: 'org.eclipse.persistence', name: 'org.eclipse.persistence.moxy',
                    version: '2.7.3'
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
-    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.0.Final'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.12.Final'
     // https://mvnrepository.com/artifact/javax.websocket/javax.websocket-client-api
     implementation group: 'javax.websocket', name: 'javax.websocket-client-api', version: '1.1'
     implementation 'org.glassfish.tyrus:tyrus-client:1.14'
