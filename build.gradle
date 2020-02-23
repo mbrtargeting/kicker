@@ -56,7 +56,7 @@ checkstyle {
 }
 
 dependencies {
-    implementation 'org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.27',
+    implementation 'org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.30.1',
                    'org.glassfish.jersey.inject:jersey-hk2:2.27'
     implementation(group: 'org.glassfish.jersey.media', name: 'jersey-media-moxy',
                    version: '2.27') {
