@@ -57,7 +57,7 @@ checkstyle {
 
 dependencies {
     implementation 'org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.27',
-                   'org.glassfish.jersey.inject:jersey-hk2:2.27'
+                   'org.glassfish.jersey.inject:jersey-hk2:3.0.0'
     implementation(group: 'org.glassfish.jersey.media', name: 'jersey-media-moxy',
                    version: '2.27') {
         exclude group: 'org.eclipse.persistence', module: 'org.eclipse.persistence.moxy'
