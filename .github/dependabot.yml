@@ -1,0 +1,75 @@
+version: 2
+registries:
+  maven-repository-art-dc1-adscale-co-nz-8082-artifactory-repo:
+    type: maven-repository
+    url: http://art.dc1.adscale.co.nz:8082/artifactory/repo
+    username: dependabot
+    password: "${{secrets.MAVEN_REPOSITORY_ART_DC1_ADSCALE_CO_NZ_8082_ARTIFACTORY_REPO_PASSWORD}}"
+  maven-repository-art-adscale-co-nz-8082-artifactory-adscale:
+    type: maven-repository
+    url: http://art.adscale.co.nz:8082/artifactory/adscale
+    username: dependabot
+    password: "${{secrets.MAVEN_REPOSITORY_ART_ADSCALE_CO_NZ_8082_ARTIFACTORY_ADSCALE_PASSWORD}}"
+  maven-repository-art-adscale-co-nz-8082-artifactory-repo:
+    type: maven-repository
+    url: http://art.adscale.co.nz:8082/artifactory/repo
+    username: dependabot
+    password: "${{secrets.MAVEN_REPOSITORY_ART_ADSCALE_CO_NZ_8082_ARTIFACTORY_REPO_PASSWORD}}"
+  maven-repository-art-dc1-adscale-co-nz-8082-artifactory-adscale:
+    type: maven-repository
+    url: http://art.dc1.adscale.co.nz:8082/artifactory/adscale
+    username: dependabot
+    password: "${{secrets.MAVEN_REPOSITORY_ART_DC1_ADSCALE_CO_NZ_8082_ARTIFACTORY_ADSCALE_PASSWORD}}"
+
+updates:
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "17:00"
+  pull-request-branch-name:
+    separator: "-"
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: com.avast.gradle:gradle-docker-compose-plugin
+    versions:
+    - 0.14.0
+    - 0.14.1
+  - dependency-name: org.postgresql:postgresql
+    versions:
+    - 42.2.18
+    - 42.2.19
+  - dependency-name: org.hibernate:hibernate-core
+    versions:
+    - 5.4.27.Final
+    - 5.4.28.Final
+  - dependency-name: org.glassfish.jersey.containers:jersey-container-grizzly2-http
+    versions:
+    - 3.0.0
+  - dependency-name: org.glassfish.jersey.inject:jersey-hk2
+    versions:
+    - 3.0.0
+  - dependency-name: org.apache.logging.log4j:log4j-core
+    versions:
+    - 2.14.0
+  - dependency-name: org.apache.logging.log4j:log4j-slf4j-impl
+    versions:
+    - 2.14.0
+  - dependency-name: org.apache.logging.log4j:log4j-1.2-api
+    versions:
+    - 2.14.0
+  - dependency-name: org.apache.logging.log4j:log4j-api
+    versions:
+    - 2.14.0
+  - dependency-name: com.github.johnrengelman.shadow
+    versions:
+    - 6.1.0
+  - dependency-name: org.apache.zookeeper:zookeeper
+    versions:
+    - 3.6.2
+  registries:
+  - maven-repository-art-dc1-adscale-co-nz-8082-artifactory-repo
+  - maven-repository-art-adscale-co-nz-8082-artifactory-adscale
+  - maven-repository-art-adscale-co-nz-8082-artifactory-repo
+  - maven-repository-art-dc1-adscale-co-nz-8082-artifactory-repo
+  - maven-repository-art-dc1-adscale-co-nz-8082-artifactory-adscale
